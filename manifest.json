@@ -1,0 +1,19 @@
+{
+  "manifest_version": 3,
+  "name": "Dev ↔ PM Translator",
+  "version": "0.1.0",
+  "description": "Right-click any text to translate between plain English and technical specs.",
+  "permissions": ["contextMenus", "storage", "activeTab"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ]
+}
